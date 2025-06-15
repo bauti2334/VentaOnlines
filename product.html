@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Product Details - ARGSA</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Modelos Militares ARGSA</h1>
+    <a href="index.html">← Back to Store</a>
+  </header>
+
+  <main id="product-details"></main>
+
+  <script src="products.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = parseInt(params.get("id"));
+    const product = products.find(p => p.id === id);
+
+    if (product) {
+      document.getElementById("product-details").innerHTML = `
+        <h2>${product.name}</h2>
+        <img src="${product.image}" alt="${product.name}" />
+        <p>${product.description}</p>
+        <p>Price: $${product.price.toFixed(2)} USD</p>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+          <input type="hidden" name="cmd" value="_xclick" />
+          <input type="hidden" name="business" value="oteroclaudia23@gmail.com" />
+          <input type="hidden" name="item_name" value="${product.name}" />
+          <input type="hidden" name="amount" value="${product.price.toFixed(2)}" />
+          <input type="hidden" name="currency_code" value="USD" />
+          <input type="hidden" name="return" value="${product.downloadLink}" />
+          <input type="submit" value="Buy Now with PayPal" />
+        </form>
+      `;
+    } else {
+      document.getElementById("product-details").innerText = "Product not found.";
+    }
+  </script>
+</body>
+</html>
