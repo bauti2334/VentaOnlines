@@ -1,22 +1,38 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mi Tienda - Modelo de avión</title>
+  <title>Modelos Militares ARGSA</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://sdk.mercadopago.com/js/v2"></script>
 </head>
 <body>
-  <h1>Mi Tienda Digital</h1>
-  <div class="product-card">
-    <img src="https://via.placeholder.com/200x150.png?text=Modelo+de+avion" alt="Modelo de avión" />
-    <h2>Modelo de avión</h2>
-    <p>Precio: $1000 ARS</p>
-    <button id="buyBtn">Comprar</button>
-  </div>
+  <header>
+    <h1>Modelos Militares ARGSA</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-  <script src="script.js"></script>
+  <main id="product-list"></main>
+
+  <script src="products.js"></script>
+  <script>
+    const container = document.getElementById('product-list');
+
+    products.forEach(product => {
+      const card = document.createElement("div");
+      card.className = "product-card";
+      card.innerHTML = `
+        <img src="${product.image}" alt="${product.name}" />
+        <h2>${product.name}</h2>
+        <p>Price: $${product.price.toFixed(2)} USD</p>
+        <a href="product.html?id=${product.id}">View Details</a>
+      `;
+      container.appendChild(card);
+    });
+  </script>
 </body>
 </html>
 
