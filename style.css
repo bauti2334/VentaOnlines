@@ -76,3 +76,13 @@ button, input[type="submit"] {
   object-fit: cover;
 }
 
+#product-details img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px auto;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+
