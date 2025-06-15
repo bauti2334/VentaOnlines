@@ -17,10 +17,10 @@ const products = [
   },
   {
     id: 3,
-    name: "Pucará IA-58",
-    price: 10.00,
-    description: "Digital scale model of the iconic IA-58 Pucará aircraft.",
-    image: "https://via.placeholder.com/300x200?text=IA-58+Pucará",
-    downloadLink: "https://mediafire.com/examplePucara"
+    name: "FMA IA-58 Pucará",
+    price: 1,
+    description: "RBX model of the Argentine Pucara used in the Falklands War, has a GS Aeolus v4 system, in addition to support from our developer..",
+    image: "https://i.postimg.cc/CKFDX5p1/Roblox-Screen-Shot20250615-143443757.png",
+    downloadLink: "https://www.mediafire.com/file/l4u4tcjvpr1zowd/FMA_IA-58_Pucar%25C3%25A1.rbxm/file"
   }
 ];
