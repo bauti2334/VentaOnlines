@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mi Tienda</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Mi Tienda Online</h1>
+  </header>
+
+  <main class="container">
+    <div class="product">
+      <img src="https://via.placeholder.com/150" alt="Producto 1" />
+      <h2>Producto 1</h2>
+      <p>$1000</p>
+      <button onclick="agregarAlCarrito('Producto 1', 1000)">Agregar</button>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/150" alt="Producto 2" />
+      <h2>Producto 2</h2>
+      <p>$1500</p>
+      <button onclick="agregarAlCarrito('Producto 2', 1500)">Agregar</button>
+    </div>
+  </main>
+
+  <section class="cart">
+    <h2>🛒 Carrito</h2>
+    <ul id="lista-carrito"></ul>
+    <p><strong>Total: $<span id="total">0</span></strong></p>
+    <button onclick="pagar()">Pagar</button>
+  </section>
+
+  <footer>
+    <p>© 2025 Mi Tienda</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
